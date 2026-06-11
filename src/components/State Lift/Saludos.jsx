@@ -10,7 +10,7 @@ function Saludos({ nombre }) {
     return (
 
         <>
-            {nombre && <p>{gerarSaludo(nombre)}</p>}
+            {nombre &&  <p>{gerarSaludo(nombre)}</p>}
 
         </>
 

@@ -1,38 +1,25 @@
 import { use, useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Minombre from './components/State Lift/Minombre';
 import Saludos from './components/State Lift/Saludos';
 import Click from './components/State Lift/Click';
-import MostrarClick from './components/State Lift/MostrarClick';
-import EligirColor from './components/State Lift/ElegirColor';
-import MostrarColor from './components/State Lift/MostrarColor';
 import './App.css'
-
-
-
+import Home from './pages/Home';
+import Contacto from './pages/Contacto';
+import Empresa from './pages/Empresa';
+import Navbar from './components/layout/Navbar';
 function App() {
-  /*
-  const [nombre,setNombre] = useState("");
-  const [click,setClick] = useState(0);
-
-  function sumar(){
-    setClick(click +1 );
-  }
-
-  function restar(){
-    setClick(click - 1);
-  }
-*/
-
-const[color,setColor] = useState("");
-
-
+  const [color, setColor] = useState("");
 
   return (
     <>
-    
-    <EligirColor setColor={setColor} />
-    <MostrarColor color={color}/>
+    <Navbar/>
 
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Empresa" element={<Empresa />} />
+        <Route path="/Contacto" element={<Contacto />} />
+      </Routes>
     </>
   )
 }
